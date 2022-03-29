@@ -1,12 +1,12 @@
 # TEAM NAME - Milestone 1
 
 ## Pages
-- [ ] Home
+- [X] Home
   - [X] Modern Design
   - [X] Basic welcome information
-  - [ ] Useful links to get to the other pages on the site
+  - [X] Useful links to get to the other pages on the site
     - [X] Home
-    - [ ] About
+    - [X] About
     - [X] Color Coordinator
 - [ ] About
   - [ ] Team member names
