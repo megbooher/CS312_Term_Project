@@ -11,7 +11,10 @@ class Controller_Milestone extends Controller_Template{
     public function action_index(){
         $this->template->rows = 1;
         $this->template->colors = 1;
-        $this->template->title = "My Homepage";
+
+        $this->template->logo_path = Asset::find_file('companylogo.png', 'img');
+
+        $this->template->title = "Cat Midwife Finder Homepage";
     }
 
     public function action_color(){
@@ -41,6 +44,9 @@ class Controller_Milestone extends Controller_Template{
         else{
             $colors = 1;
         }
+
+        // $this->template->table = View::forge('milestone/color_table.php');
+
 
         $this->template->rows = $rows;
         $this->template->colors = $colors;
