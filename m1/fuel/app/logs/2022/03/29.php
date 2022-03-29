@@ -29,3 +29,17 @@ ERROR - 2022-03-29 13:20:49 --> Error - syntax error, unexpected 'style' (T_STRI
 ERROR - 2022-03-29 13:21:07 --> Error - syntax error, unexpected '=', expecting ',' or ')' in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/classes/controller/milestone.php on line 15
 ERROR - 2022-03-29 13:27:38 --> Error - Could not find asset: companylogo.jpg in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/core/classes/asset/instance.php on line 413
 ERROR - 2022-03-29 13:30:43 --> Error - Could not find asset: comanylogo.png in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/core/classes/asset/instance.php on line 413
+ERROR - 2022-03-29 14:01:11 --> Notice - Undefined variable: rows in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:01:33 --> Notice - Undefined variable: rows in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:01:37 --> Notice - Undefined variable: rows in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:30:19 --> Notice - Undefined variable: content in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 34
+ERROR - 2022-03-29 14:40:11 --> Notice - Undefined variable: color in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/classes/controller/milestone.php on line 52
+ERROR - 2022-03-29 14:40:21 --> Notice - Undefined variable: color in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/classes/controller/milestone.php on line 52
+ERROR - 2022-03-29 14:46:06 --> Error - View variable is not set: content in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 14:46:18 --> Error - View variable is not set: links in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 14:46:26 --> Notice - Undefined variable: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:47:05 --> Notice - Undefined variable: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:47:11 --> Notice - Undefined variable: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:51:14 --> Notice - Undefined variable: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:51:46 --> Notice - Undefined variable: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
+ERROR - 2022-03-29 14:52:23 --> Error - View variable is not set: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541

@@ -18,11 +18,12 @@
 
 <nav>
     <ul id="top_menu">
-        <li><a href="./index">My Homepage</a></li>
+        <li><a href="./index">Homepage</a></li>
+        <li><a href="./about">About</a></li>
+        <li><?php echo "<a href= 'https://www.cs.colostate.edu:4444/~meganboo/CS312_Term_Project/m1/index.php/milestone/color?n_rows_cols=$rows&n_colors=$colors'>Color Coordinate Page</a>" ?></li>
         <li><a href="https://www.colostate.edu/">CSU Home</a></li>
         <li><a href="https://www.cs.colostate.edu/">CS Dept</a></li>
         <li><a href="https://www.online.colostate.edu/">CSU Online</a></li>
-        <li><?php echo "<a href= 'https://www.cs.colostate.edu:4444/~meganboo/CS312_Term_Project/m1/index.php/milestone/color?n_rows_cols=$rows&n_colors=$colors'>Color Coordinate Page</a>" ?></li>
     </ul>
     <hr>
 </nav>
@@ -30,10 +31,7 @@
 
 
 <body>
-    <div id='logo'>
-        <?php echo Asset::img('companylogo.png', array('style' => 'width: 500px', 'alt' => 'company logos'));?>
-    </div>
-    <p>We believe that expecting mothers deserve as much support as possible regardless of species. At catmidwifefinder.com we are committed to match you to the ideal midwife for your feline companion in under 24 hours.</p>
+    <?php echo $content;?>
 </body>
 
 <footer>

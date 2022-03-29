@@ -12,8 +12,7 @@ class Controller_Milestone extends Controller_Template{
         $this->template->rows = 1;
         $this->template->colors = 1;
 
-        $this->template->logo_path = Asset::find_file('companylogo.png', 'img');
-
+        $this->template->content = View::forge('homepage.php');
         $this->template->title = "Cat Midwife Finder Homepage";
     }
 
@@ -45,14 +44,20 @@ class Controller_Milestone extends Controller_Template{
             $colors = 1;
         }
 
-        // $this->template->table = View::forge('milestone/color_table.php');
-
-
         $this->template->rows = $rows;
         $this->template->colors = $colors;
-        $this->template->title="Color Coordinate";
+        $this->template->content = View::forge('colorcoor.php');
 
+        $this->template->title="Color Coordinate";
     }    
     
+    public function action_about(){
+        $this->template->rows = 1;
+        $this->template->colors = 1;
+
+        $this->template->content = View::forge('about.php');
+
+        $this->template->title = "About Page";
+    }
 
 }
