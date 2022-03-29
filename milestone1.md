@@ -2,12 +2,12 @@
 
 ## Pages
 - [ ] Home
-  - [ ] Modern Design
-  - [ ] Basic welcome information
+  - [X] Modern Design
+  - [X] Basic welcome information
   - [ ] Useful links to get to the other pages on the site
-    - [ ] Home
+    - [X] Home
     - [ ] About
-    - [ ] Color Coordinator
+    - [X] Color Coordinator
 - [ ] About
   - [ ] Team member names
   - [ ] Brief biography of each team member
