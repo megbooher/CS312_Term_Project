@@ -9,32 +9,44 @@ class Controller_Milestone extends Controller_Template{
 	 */
 
     public function action_index(){
-        if(isset($_GET['direction'])){
-            $dir = Input::get('direction');
-            $dir = strtolower($dir);
-            if($dir == "east"){
-                $other = "west";
-            }
-            elseif($dir=="west"){
-                $other = "east";
-            }
-        }
-        else{
-            $dir="west";
-            $other = "east";
-        }
-        
-        $this->template->dir = $dir;
-        $this->template->other = $other;
+        $this->template->rows = 1;
+        $this->template->colors = 1;
         $this->template->title = "My Homepage";
     }
 
-    public function action_one(){
-        $this->template->title="East Page";
+    public function action_color(){
+        // load and check number of rows
+        if(isset($_GET['n_rows_cols'])){
+            $rows = (int) Input::get('n_rows_cols');
+            if($rows < 1){
+                die("n_rows_cols must be between 1 and 26!");
+            }
+            elseif($rows > 26){
+                die("n_rows_cols must be between 1 and 26!");
+            }
+        }
+        else{
+            $rows = 1;
+        }
+        // load and check number of colors
+        if(isset($_GET['n_colors'])){
+            $colors = (int) Input::get('n_colors');
+            if($colors < 1){
+                die("n_colors must be between 1 and 10!");
+            }
+            elseif($colors > 10){
+                die("n_colors must be between 1 and 10!");
+            }
+        }
+        else{
+            $colors = 1;
+        }
+
+        $this->template->rows = $rows;
+        $this->template->colors = $colors;
+        $this->template->title="Color Coordinate";
 
     }    
     
-    public function action_two(){
-        $this->template->title="West Page";
-    }
+
 }
