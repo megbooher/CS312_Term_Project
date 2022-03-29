@@ -17,13 +17,13 @@
 
 ### Color Coordinate Generation
 - [ ] `GET`
-  - [ ] URL parameters asking for user input:
-    - [ ] rows/columns restrictions: `1 <= x <=26`
-    - [ ] number of colors: `1 <= x <= 10`
-  - [ ] validate user input
-    - [ ] If invalid: return the user to the form with meaningful error messages
+  - [X] URL parameters asking for user input:
+    - [X] rows/columns restrictions: `1 <= x <=26`
+    - [X] number of colors: `1 <= x <= 10`
+  - [X] validate user input
+    - [X] If invalid: return the user to the form with meaningful error messages
 - Successful validation:
-  - [ ] pass the parameters `(int rows/columns, int colors)` to the **SAME** controller/action
+  - [X] pass the parameters `(int rows/columns, int colors)` to the **SAME** controller/action
   - [ ] validate the parameters
     - [ ] if valid:
       - [ ] return two tables
