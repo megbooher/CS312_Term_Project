@@ -55,7 +55,7 @@ class Controller_Milestone extends Controller_Template{
         $this->template->rows = 1;
         $this->template->colors = 1;
 
-        $this->template->content = View::forge('about.php');
+        $this->template->content = View::forge('biography.php');
 
         $this->template->title = "About Page";
     }
