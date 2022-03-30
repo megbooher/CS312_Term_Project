@@ -27,8 +27,8 @@
   - [ ] validate the parameters
     - [ ] if valid:
       - [ ] return two tables
-      - [X] have a 'print' button
-    - [X] if invalid: render the form with error messages
+      - [] have a 'print' button
+    - [] if invalid: render the form with error messages
 
 #### Table requirements:
 - [ ] Table 1 (upper table):
