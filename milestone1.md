@@ -8,10 +8,10 @@
     - [X] Home
     - [X] About
     - [X] Color Coordinator
-- [ ] About
-  - [ ] Team member names
-  - [ ] Brief biography of each team member
-  - [ ] Picture or avatar for each team member
+- [X] About
+  - [X] Team member names
+  - [X] Brief biography of each team member
+  - [X] Picture or avatar for each team member
 - [ ] Color Coordinator
   - [ ] See Requirements below
 
@@ -67,7 +67,7 @@
 
 
 ### Pressing the print button
-- [ ] Takes the user to a "printable view" of the resulting tables.
+- [X] Takes the user to a "printable view" of the resulting tables.
 - [ ] Keep the same table dimensions and easily print on one page (8.5" x 11") in portrait mode.
   - [ ] Render in greyscale
   - [ ] Header: greyscale logo and company name
@@ -77,7 +77,7 @@
 
 
 ## Fuel PHP Framework
-- [ ] Every page, except the print view, should use the same layout and be managed in a central location (ie, if there's a typo, you only have to change it in one place).
+- [X] Every page, except the print view, should use the same layout and be managed in a central location (ie, if there's a typo, you only have to change it in one place).
 - [ ] Each team member is responsible for hosting the complete application on the local_html server reachable at `.../~[eid]/m1/...`.
 - [ ] `.../~[eid]/m1` should redirect to the home page of the site.
 - [ ] One member of the group must submit a tar file of the project to Canvas. Tar file structure should be as follows:
