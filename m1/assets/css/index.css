@@ -77,3 +77,70 @@ nav ul {
     color: #444444;
     text-transform: uppercase;
 }
+
+
+#team_biographies {
+    width: 900px;
+    margin: auto;
+}
+
+#team_biographies img {
+    width: 30%;
+}
+
+p {
+    font-size: 25px;
+    padding-top: 35px;
+    text-align: justify;
+}
+
+h2 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 33px;
+}
+
+
+.team_left_pos {
+    padding: 15px 0px 25px 0px;
+    border-bottom-style: dotted;
+}
+
+.team_left_pos h2 {
+    float: left;
+}
+
+.team_left_pos img {
+    float: left;
+    margin-right: 20px;
+}
+
+
+.team_right_pos {
+    padding: 15px 0px 25px 0px;
+    border-bottom-style: dotted;
+}
+
+.team_right_pos h2 {
+    float: left;
+}
+
+.team_right_pos img {
+    float: right;
+    margin-left: 20px;
+}
+
+
+.floatClear {
+    clear: both;
+}
+
+.floatClear_left {
+    clear: left;
+}
+
+.floatClear_right {
+    clear: right;
+}
+
+
