@@ -19,7 +19,7 @@
 <nav>
     <ul id="top_menu">
         <li><a href="./index">Homepage</a></li>
-        <li><a href="./about">About</a></li>
+        <li><a href=<?=Uri::create('index.php/milestone/about')?>>About</a></li>
         <li><a
                 href=<?=Uri::create('index.php/milestone/color' . (isSet($content->requestType) && $content->requestType === 'GET' && $content->rows && $content->colors ? ('?n_rows_cols=' .$content->rows . '&n_colors=' . $content->colors) : '') )?>>Color
                 Coordinate Page
