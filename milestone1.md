@@ -26,9 +26,9 @@
     - [x] If invalid: return the user to the form with meaningful error messages
 - Successful validation:
   - [x] pass the parameters `(int rows/columns, int colors)` to the **SAME** controller/action
-  - [ ] validate the parameters
-    - [ ] if valid:
-      - [ ] return two tables
+  - [x] validate the parameters
+    - [x] if valid:
+      - [x] return two tables
       - [x] have a 'print' button
     - [x] if invalid: render the form with error messages
 
@@ -36,13 +36,13 @@
 
 - [ ] Table 1 (upper table):
   - [x] 2 col by `x` row (`x` = numColors param)
-  - [C] no header row
-  - [C] spans most of the width of the page
-  - [C] right column: 80% table width
-  - [ ] left column
-    - [C] 20% table width
-    - [C] each cell is a drop-down with 10 color names (these should be ordered in an intuitive way for the user)
-      - [C] each cell has a different default set color
+  - [x] no header row
+  - [x] spans most of the width of the page
+  - [x] right column: 80% table width
+  - [x] left column
+    - [x] 20% table width
+    - [x] each cell is a drop-down with 10 color names (these should be ordered in an intuitive way for the user)
+      - [x] each cell has a different default set color
         - [x] 1.  red
         - [x] 2.  orange
         - [x] 3.  yellow
