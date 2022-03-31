@@ -1,11 +1,11 @@
 <head>
-<?php echo Asset::css('index.css'); ?>
+    <?php echo Asset::css('index.css'); ?>
 
     <title><?php echo $title; ?> </title>
     <meta charset="utf-16">
-        <meta name="author" content="CS312 milestone1">
-        <meta name="description" content="Color Coordinate">
-        <meta name="keywords" content="Homepage, HTML5, CS312, CSU">
+    <meta name="author" content="CS312 milestone1">
+    <meta name="description" content="Color Coordinate">
+    <meta name="keywords" content="Homepage, HTML5, CS312, CSU">
 </head>
 <header>
     <div id='CSU_logo'>
@@ -20,7 +20,10 @@
     <ul id="top_menu">
         <li><a href="./index">Homepage</a></li>
         <li><a href="./about">About</a></li>
-        <li><?php echo "<a href= 'https://www.cs.colostate.edu:4444/~meganboo/CS312_Term_Project/m1/index.php/milestone/color?n_rows_cols=$rows&n_colors=$colors'>Color Coordinate Page</a>" ?></li>
+        <li><a
+                href=<?=Uri::create('index.php/milestone/color' . (isSet($content->requestType) && $content->requestType === 'GET' && $content->rows && $content->colors ? ('?n_rows_cols=' .$content->rows . '&n_colors=' . $content->colors) : '') )?>>Color
+                Coordinate Page
+            </a></li>
     </ul>
     <hr>
 </nav>
@@ -32,5 +35,5 @@
 </body>
 
 <footer>
-CS312 Spring 2022
+    CS312 Spring 2022
 </footer>
