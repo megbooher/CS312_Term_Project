@@ -24,9 +24,6 @@
                 href=<?=Uri::create('index.php/milestone/color' . (isSet($content->requestType) && $content->requestType === 'GET' && $content->rows && $content->colors ? ('?n_rows_cols=' .$content->rows . '&n_colors=' . $content->colors) : '') )?>>Color
                 Coordinate Page
             </a></li>
-        <li><a href="https://www.colostate.edu/">CSU Home</a></li>
-        <li><a href="https://www.cs.colostate.edu/">CS Dept</a></li>
-        <li><a href="https://www.online.colostate.edu/">CSU Online</a></li>
     </ul>
     <hr>
 </nav>

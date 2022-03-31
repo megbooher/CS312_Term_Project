@@ -16,7 +16,6 @@ function createTable1($n){
             }
         }
         $t .= "</select>";
-        $t .= "<input type='radio' id='radio' name='radio'></input>";
         $t .= '</td>';
         $t .= '<td></td>';
         $t .= '</tr>';
@@ -75,6 +74,7 @@ function createTable2($n){
 
     <div style='color:red; text-align: center;'>
         <br>
+        <?php if (empty($colorError) && $colors && $rows) {echo '<button type="button" onClick="window.print()">Print View</button>';} ?>
         <?php if($colorError) { echo "$colorError <br>";} ?>
         <?php if($rowError) { echo $rowError;} ?>
         <br>
@@ -83,9 +83,8 @@ function createTable2($n){
 
     <?php if (empty($colorError) && $colors) {echo createTable1($colors);} ?>
     <br>
-    <?php if (empty($colorError) && $colors) {echo createTable2($rows);} ?>
+    <?php if (empty($colorError) && $rows) {echo createTable2($rows);} ?>
     <br>
 
-    <button type="button">Print View</button>
-    <button onClick="window.print()" id="printing">Print</button>
+
 </div>

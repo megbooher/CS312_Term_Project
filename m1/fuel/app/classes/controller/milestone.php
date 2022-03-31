@@ -67,10 +67,11 @@ class Controller_Milestone extends Controller_Template
         $this->template->content->rowError = $rowError;
         $this->template->content->colorError = $colorError;
     }
+        
 
     public function action_about()
     {
-        $this->template->content = View::forge("about.php");
+        $this->template->content = View::forge('biography.php');
         $this->template->title = "About Page";
     }
 }
