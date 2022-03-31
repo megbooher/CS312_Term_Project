@@ -43,3 +43,15 @@ ERROR - 2022-03-29 14:47:11 --> Notice - Undefined variable: colors in /s/bach/m
 ERROR - 2022-03-29 14:51:14 --> Notice - Undefined variable: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
 ERROR - 2022-03-29 14:51:46 --> Notice - Undefined variable: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 23
 ERROR - 2022-03-29 14:52:23 --> Error - View variable is not set: colors in /s/bach/m/under/meganboo/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 18:39:14 --> Warning - Creating default object from empty value in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/classes/controller/milestone.php on line 49
+ERROR - 2022-03-29 18:51:58 --> Warning - Creating default object from empty value in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/classes/controller/milestone.php on line 49
+ERROR - 2022-03-29 18:52:21 --> Notice - Undefined variable: colors in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/views/colorcoor.php on line 2
+ERROR - 2022-03-29 19:18:10 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 19:18:43 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 19:18:52 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 19:19:08 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 19:19:59 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 19:21:05 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 19:21:52 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 19:22:00 --> Error - View variable is not set: rows in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/core/classes/view.php on line 541
+ERROR - 2022-03-29 22:04:06 --> Notice - Undefined variable: reqeustType in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/views/colorcoor.php on line 2

@@ -1,63 +1,76 @@
 <?php
 
-class Controller_Milestone extends Controller_Template{
+class Controller_Milestone extends Controller_Template
+{
     /**
-	 * The basic welcome message
-	 *
-	 * @access  public
-	 * @return  Response
-	 */
+     * The basic welcome message
+     *
+     * @access  public
+     * @return  Response
+     */
 
-    public function action_index(){
-        $this->template->rows = 1;
-        $this->template->colors = 1;
-
-        $this->template->content = View::forge('homepage.php');
+    public function action_index()
+    {
+        $this->template->content = View::forge("homepage.php");
         $this->template->title = "Cat Midwife Finder Homepage";
     }
 
-    public function action_color(){
+    public function action_color()
+    {
         // load and check number of rows
-        if(isset($_GET['n_rows_cols'])){
-            $rows = (int) Input::get('n_rows_cols');
-            if($rows < 1){
-                die("n_rows_cols must be between 1 and 26!");
+        $rows = null;
+        $colors = null;
+        $rowError = null;
+        $colorError = null;
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        if($requestMethod === "POST") {
+            
+        }
+        if ($requestMethod === "GET") {
+            if (isset($_GET["n_rows_cols"])) {
+                $rows = (int) Input::get("n_rows_cols");
+                if ($rows < 1 || $rows > 26) {
+                    $rowError = "n_rows_cols must be between 1 and 26!";
+                }
             }
-            elseif($rows > 26){
-                die("n_rows_cols must be between 1 and 26!");
+
+            // load and check number of colors
+            if (isset($_GET["n_colors"])) {
+                $colors = (int) Input::get("n_colors");
+                if ($colors < 1 || $colors > 10) {
+                    $colorError = "n_colors must be between 1 and 10!";
+                }
+            }
+        } else {
+            if (isset($_POST["n_rows_cols"])) {
+                $rows = (int) $_POST["n_rows_cols"];
+                if ($rows < 1 || $rows > 26) {
+                    $rowError = "n_rows_cols must be between 1 and 26!";
+                }
+            }
+
+            // load and check number of colors
+            if (isset($_POST["n_colors"])) {
+                $colors = (int) $_POST["n_colors"];
+                if ($colors < 1 || $colors > 10) {
+                    $colorError = "n_colors must be between 1 and 10!";
+                }
             }
         }
-        else{
-            $rows = 1;
-        }
-        // load and check number of colors
-        if(isset($_GET['n_colors'])){
-            $colors = (int) Input::get('n_colors');
-            if($colors < 1){
-                die("n_colors must be between 1 and 10!");
-            }
-            elseif($colors > 10){
-                die("n_colors must be between 1 and 10!");
-            }
-        }
-        else{
-            $colors = 1;
-        }
+        
 
-        $this->template->rows = $rows;
-        $this->template->colors = $colors;
-        $this->template->content = View::forge('colorcoor.php');
-
-        $this->template->title="Color Coordinate";
-    }    
-    
-    public function action_about(){
-        $this->template->rows = 1;
-        $this->template->colors = 1;
-
-        $this->template->content = View::forge('about.php');
-
-        $this->template->title = "About Page";
+        $this->template->content = View::forge("colorcoor.php");
+        $this->template->title = "Color Coordinate";
+        $this->template->content->rows = $rows;
+        $this->template->content->colors = $colors;
+        $this->template->content->requestType = $requestMethod;
+        $this->template->content->rowError = $rowError;
+        $this->template->content->colorError = $colorError;
     }
 
+    public function action_about()
+    {
+        $this->template->content = View::forge("about.php");
+        $this->template->title = "About Page";
+    }
 }
