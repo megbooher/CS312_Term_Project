@@ -1,79 +1,61 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
 }
 
 header {
-    font-family: "Open Sans", Arial, "Times New Roman", serif;
+  background-color: lightblue;
 }
 
 main {
-    margin-left: 15px;
-    margin-top: 0px;
+  margin-left: 15px;
+  margin-top: 0px;
+  background-color: aquamarine;
 }
 
 address {
-    margin: 15px;
+  margin: 15px;
 }
 
-
-footer{
-    position: fixed;
-    bottom: 0;
-    margin: 0;
-    background-color: #102542;
-    width: 100%;
-    color:#F7F7F2;
-    text-align: center;
+footer {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  background-color: #3a3a3a;
+  width: 100%;
+  color: #f7f7f2;
+  text-align: center;
 }
 
+nav {
+  padding-bottom: 10px;
+}
 nav li {
-    list-style-type: none;
-    display: inline-block;
-    margin-top: 10px;
-
+  display: inline-block;
+  margin-top: 10px;
 }
 nav li a {
-    text-decoration: none;
-    padding: 10px 20px;
-    color: black;
+  background-color: #d3d3d3;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-left: 20px;
+  color: black;
+  border-radius: 10px;
 }
 
 nav li a:hover {
-    background-color: lightgray;
+  background-color: lightblue;
+  color: white;
 }
 
-nav ul {
-    background-color: white;
-    margin-top: 0px;
-    margin-bottom: 0px;
-
+#websiteTitle {
+  padding-top: 20px;
+  color: #3a3a3a;
+  margin-left: 10px;
 }
-
-
-#CSU_logo {
-    background-color: #1E4D2B;
-    padding: 0px;
-}
-
-#importLogo {
-    width: 450px;
-}
-
-#title {
-    background-color: #C8C372;
-    padding-left: 10px;
-}
-
-#title h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-
-    padding-top: 5px;
-    padding-bottom: 5px;
-
-    font-size: 24px;
-    font-weight: normal;
-    color: #444444;
-    text-transform: uppercase;
+#pageTitle {
+  padding-top: 10px;
+  color: #3a3a3a;
+  margin-left: 20px;
+  padding-bottom: 10px;
 }

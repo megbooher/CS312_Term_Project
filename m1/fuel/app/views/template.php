@@ -8,12 +8,9 @@
     <meta name="keywords" content="Homepage, HTML5, CS312, CSU">
 </head>
 <header>
-    <div id='CSU_logo'>
-        <?php echo Asset::img('csu_logo.png', array('style' => 'width: 450', 'alt' => 'csu logo'));?>
-    </div>
-    <div id="title">
-        <h2> <?php echo $title; ?></h2>
-    </div>
+    <h1 id='websiteTitle'>Website Title</h1>
+    <div></div>
+    <h2 id='pageTitle'> <?php echo $title; ?></h2>
 </header>
 
 <nav>
@@ -25,7 +22,6 @@
                 Coordinate Page
             </a></li>
     </ul>
-    <hr>
 </nav>
 
 
