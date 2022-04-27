@@ -8,26 +8,30 @@
     <meta name="keywords" content="Homepage, HTML5, CS312, CSU">
 </head>
 <header>
-    <h1 id='websiteTitle'>Website Title</h1>
-    <div></div>
-    <h2 id='pageTitle'> <?php echo $title; ?></h2>
+    <div id='smallLogo'>
+        <?php echo Asset::img('SmallLogo.png', array('style' => 'width: 150', 'alt' => 'smallLogo'));?>
+        <h1 id='websiteTitle'>Cat Midwife Finder</h1>
+    </div>
+    <nav>
+        <ul id="top_menu">
+            <li><a class=<?php echo $homeStyle;?> href="./index">Homepage</a></li>
+            <li><a class=<?php echo $aboutStyle;?> href=<?=Uri::create('index.php/milestone/about')?>>About</a></li>
+            <li><a class=<?php echo $colorStyle;?>
+                    href=<?=Uri::create('index.php/milestone/color' . (isSet($content->requestType) && $content->requestType === 'GET' && $content->rows && $content->colors ? ('?n_rows_cols=' .$content->rows . '&n_colors=' . $content->colors) : '') )?>>Color
+                    Coordinate Page
+                </a></li>
+        </ul>
+    </nav>
 </header>
-
-<nav>
-    <ul id="top_menu">
-        <li><a href="./index">Homepage</a></li>
-        <li><a href=<?=Uri::create('index.php/milestone/about')?>>About</a></li>
-        <li><a
-                href=<?=Uri::create('index.php/milestone/color' . (isSet($content->requestType) && $content->requestType === 'GET' && $content->rows && $content->colors ? ('?n_rows_cols=' .$content->rows . '&n_colors=' . $content->colors) : '') )?>>Color
-                Coordinate Page
-            </a></li>
-    </ul>
-</nav>
-
 
 
 <body>
-    <?php echo $content;?>
+    <h2 id='pageTitle'> <?php echo $title; ?></h2>
+
+    <div id='contentContainer'>
+        <?php echo $content;?>
+    </div>
+
 </body>
 
 <footer>

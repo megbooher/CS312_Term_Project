@@ -2,19 +2,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
 }
-
 header {
-  background-color: lightblue;
+  background-color: #0ab5d1;
 }
 
-main {
-  margin-left: 15px;
-  margin-top: 0px;
-  background-color: aquamarine;
+#smallLogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-address {
-  margin: 15px;
+#contentContainer {
+  margin-top: 10px;
 }
 
 footer {
@@ -28,34 +26,33 @@ footer {
 }
 
 nav {
-  padding-bottom: 10px;
+  padding: 10px 0px;
 }
 nav li {
   display: inline-block;
-  margin-top: 10px;
+  margin-right: 25px;
 }
 nav li a {
+  display: block;
   background-color: #d3d3d3;
   text-decoration: none;
   padding: 10px 20px;
-  margin-left: 20px;
   color: black;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
-nav li a:hover {
-  background-color: lightblue;
+.active {
+  background-color: #1cc271;
   color: white;
 }
 
 #websiteTitle {
-  padding-top: 20px;
+  padding: 0px 70px 0px 70px;
   color: #3a3a3a;
-  margin-left: 10px;
+  height: fit-content;
 }
 #pageTitle {
-  padding-top: 10px;
+  padding-top: 5px;
   color: #3a3a3a;
-  margin-left: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }

@@ -12,7 +12,11 @@ class Controller_Milestone extends Controller_Template
     public function action_index()
     {
         $this->template->content = View::forge("homepage.php");
-        $this->template->title = "Cat Midwife Finder Homepage";
+        $this->template->title = "Homepage";
+        $this->template->homeStyle = 'active';
+        $this->template->aboutStyle = 'normal';
+        $this->template->colorStyle = 'normal';
+
     }
 
     public function action_color()
@@ -23,9 +27,6 @@ class Controller_Milestone extends Controller_Template
         $rowError = null;
         $colorError = null;
         $requestMethod = $_SERVER["REQUEST_METHOD"];
-        if($requestMethod === "POST") {
-            
-        }
         if ($requestMethod === "GET") {
             if (isset($_GET["n_rows_cols"])) {
                 $rows = (int) Input::get("n_rows_cols");
@@ -66,6 +67,9 @@ class Controller_Milestone extends Controller_Template
         $this->template->content->requestType = $requestMethod;
         $this->template->content->rowError = $rowError;
         $this->template->content->colorError = $colorError;
+        $this->template->homeStyle = 'normal';
+        $this->template->aboutStyle = 'normal';
+        $this->template->colorStyle = 'active';
     }
         
 
@@ -73,5 +77,9 @@ class Controller_Milestone extends Controller_Template
     {
         $this->template->content = View::forge('biography.php');
         $this->template->title = "About Page";
+        $this->template->homeStyle = 'normal';
+        $this->template->aboutStyle = 'active';
+        $this->template->colorStyle = 'normal';
+
     }
 }
