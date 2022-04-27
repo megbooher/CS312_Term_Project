@@ -33,7 +33,6 @@
     </div>
 
 </body>
-
 <footer>
     CS312 Spring 2022
 </footer>
