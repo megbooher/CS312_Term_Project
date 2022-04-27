@@ -5,3 +5,4 @@ ERROR - 2022-04-27 14:55:02 --> Notice - Undefined variable: homestyle in /s/bac
 ERROR - 2022-04-27 14:55:36 --> Notice - Undefined variable: homestyle in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 18
 ERROR - 2022-04-27 14:56:03 --> Notice - Undefined variable: homestyle in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 18
 ERROR - 2022-04-27 14:56:09 --> Notice - Undefined variable: homestyle in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/views/template.php on line 18
+ERROR - 2022-04-27 16:49:16 --> Notice - Undefined variable: requestMethod in /s/bach/n/under/mfunston/local_html/CS312_Term_Project/m1/fuel/app/classes/controller/milestone.php on line 51

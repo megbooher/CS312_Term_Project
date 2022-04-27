@@ -58,7 +58,7 @@ function createTable2($n){
 
 <div>
     <form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
-        method="post" action="<?php $controller ?>">
+        method="get" action="<?php $controller ?>">
         <h3>Color Coordinate Generation</h3>
         <label for="n_rows_cols" id=' row'>Num Rows & Columns:</label>
         <input type="text" name="n_rows_cols" id="n_rows_cols">

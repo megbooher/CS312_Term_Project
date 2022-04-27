@@ -17,7 +17,7 @@
             <li><a class=<?php echo $homeStyle;?> href="./index">Homepage</a></li>
             <li><a class=<?php echo $aboutStyle;?> href=<?=Uri::create('index.php/milestone/about')?>>About</a></li>
             <li><a class=<?php echo $colorStyle;?>
-                    href=<?=Uri::create('index.php/milestone/color' . (isSet($content->requestType) && $content->requestType === 'GET' && $content->rows && $content->colors ? ('?n_rows_cols=' .$content->rows . '&n_colors=' . $content->colors) : '') )?>>Color
+                    href=<?=Uri::create('index.php/milestone/color' . ( $content->rows && $content->colors ? ('?n_rows_cols=' .$content->rows . '&n_colors=' . $content->colors) : '') )?>>Color
                     Coordinate Page
                 </a></li>
         </ul>
