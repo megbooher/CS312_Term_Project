@@ -13,9 +13,11 @@ class Controller_Milestone extends Controller_Template
     {
         $this->template->content = View::forge("homepage.php");
         $this->template->title = "Homepage";
-        $this->template->homeStyle = 'active';
-        $this->template->aboutStyle = 'normal';
-        $this->template->colorStyle = 'normal';
+
+        $this->template->header = View::forge("header.php");
+        $this->template->header->homeStyle = 'active';
+        $this->template->header->aboutStyle = 'normal';
+        $this->template->header->colorStyle = 'normal';
 
     }
 
@@ -50,9 +52,13 @@ class Controller_Milestone extends Controller_Template
         $this->template->content->colors = $colors;
         $this->template->content->rowError = $rowError;
         $this->template->content->colorError = $colorError;
-        $this->template->homeStyle = 'normal';
-        $this->template->aboutStyle = 'normal';
-        $this->template->colorStyle = 'active';
+
+        $this->template->header = View::forge("header.php");
+        $this->template->header->homeStyle = 'normal';
+        $this->template->header->aboutStyle = 'normal';
+        $this->template->header->colorStyle = 'active';
+        $this->template->header->rows = $rows;
+        $this->template->header->colors = $colors;
     }
         
 
@@ -60,9 +66,21 @@ class Controller_Milestone extends Controller_Template
     {
         $this->template->content = View::forge('biography.php');
         $this->template->title = "About Page";
-        $this->template->homeStyle = 'normal';
-        $this->template->aboutStyle = 'active';
-        $this->template->colorStyle = 'normal';
+
+        $this->template->header = View::forge("header.php");
+        $this->template->header->homeStyle = 'normal';
+        $this->template->header->aboutStyle = 'active';
+        $this->template->header->colorStyle = 'normal';
 
     }
+
+    public function action_print()
+    {
+        $this->template->content = View::forge("printView.php");
+        $this->template->content->tables = View::forge("colorcoor.php");
+        // $this->template->title = "Print";
+        $this->template->content->print = true;
+
+    }
+
 }

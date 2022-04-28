@@ -48,11 +48,19 @@ nav li a {
   color: white;
 }
 
-#websiteTitle {
-  padding: 0px 70px 0px 70px;
+#title {
+  padding-right: 70px;
   color: #3a3a3a;
   height: fit-content;
 }
-#pageTitle {
-  color: #3a3a3a;
+
+.colorCells {
+  width: 30px;
+  height: 30px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
 }
