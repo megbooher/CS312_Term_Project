@@ -1,12 +1,13 @@
 <?php
 function createTable1($n){
-    $t = '<table width = "80%" border="2" cellpadding=5';
+    $t = '<table width="80%" cellpadding=5';
     $count = 0;
     $colorsArr = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Teal", "Grey", "Brown", "Black");
     while($count < $n) {
         $t .= '<tr>';
-        $t .= '<td width="20%">';
-        $t .= '<select>';   
+        $t .= '<td width="30%">';
+        $t .= "<input type='radio' id='radio' name='radio'></input>";
+        $t .= "<select>";   
         for($i = 0; $i < 10; $i++) {
             if($i === $count) {
                 $t .= "<option value='$colorsArr[$i]' selected>$colorsArr[$i]</option>"; 
@@ -16,6 +17,7 @@ function createTable1($n){
             }
         }
         $t .= "</select>";
+        
         $t .= '</td>';
         $t .= '<td></td>';
         $t .= '</tr>';
@@ -25,11 +27,11 @@ function createTable1($n){
     return $t;
 }
 function createTable2($n){
-    $t = '<table width="40%" border="2" cellpadding=2';
+    $t = '<table cellpadding=2';
     $count = 0;
     while($count < $n+1) {
         $t .= '<tr>';
-        $t .= ($count === 0) ? '<td></td>' :"<td>$count</td>"; ;
+        $t .= ($count === 0) ? "<td class='colorCells'></td>" :"<td class='colorCells'>$count</td>"; 
 
         if($count === 0) {
             $countAlpha = 0;
@@ -37,13 +39,13 @@ function createTable2($n){
                 if($countAlpha === $n){
                     break;
                 }
-                $t .= "<td>$alpha</td>";
+                $t .= "<td class='colorCells'>$alpha</td>";
                 $countAlpha++;
             }
         } else {
             $countBlank = 0;
             while($countBlank < $n) {
-                $t .= "<td></td>";
+                $t .= "<td class='colorCells'></td>";
                 $countBlank++;
             }
         }
@@ -54,7 +56,21 @@ function createTable2($n){
     return $t;
 
 }
+
+if(array_key_exists('button1', $_POST)) {
+    button1();
+}
+
+function button1() {
+    echo "This is Button1 that is selected";
+    echo Asset::css('printView.css');
+}
+
 ?>
+
+<script>
+
+</script>
 
 <div>
     <form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
@@ -72,9 +88,24 @@ function createTable2($n){
         <br>
     </form>
 
+
+
     <div style='color:red; text-align: center;'>
         <br>
-        <?php if (empty($colorError) && $colors && $rows) {echo '<button type="button" onClick="window.print()">Print View</button>';} ?>
+
+
+        <?php if(empty($colorError) && $colors && $rows)
+    {
+        ?>
+
+        <form method="post">
+            <input type="submit" name="button1" class="button" value="Print" />
+        </form>
+        <?php
+        }
+?>
+
+
         <?php if($colorError) { echo "$colorError <br>";} ?>
         <?php if($rowError) { echo $rowError;} ?>
         <br>
