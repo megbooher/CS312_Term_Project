@@ -6,14 +6,14 @@ function createTable1($n){
     while($count < $n) {
         $t .= '<tr>';
         $t .= '<td width="30%">';
-        $t .= ($count === 0) ? "<input type='radio' id='radio' name='radio' checked='checked'></input>" : "<input type='radio' id='radio' name='radio'></input>";
-        $t .= "<select>";   
+        $t .= ($count === 0) ? "<input type='radio' id='radio-$count' name='radio' checked='checked'></input>" : "<input type='radio' id='radio' name='radio-$count'></input>";
+        $t .= "<select id='select-$count'>";   
         for($i = 0; $i < 10; $i++) {
             if($i === $count) {
-                $t .= "<option value='$colorsArr[$i]' selected>$colorsArr[$i]</option>"; 
+                $t .= "<option id='option-$i' value='$colorsArr[$i]' selected>$colorsArr[$i]</option>"; 
             }
             else {
-                $t .= "<option value='$colorsArr[$i]'>$colorsArr[$i]</option>"; 
+                $t .= "<option id='option-$i' value='$colorsArr[$i]'>$colorsArr[$i]</option>"; 
             }
         }
         $t .= "</select>";
@@ -32,22 +32,14 @@ function createTable2($n){
     while($count < $n+1) {
         $t .= '<tr>';
         $t .= ($count === 0) ? "<td class='colorCells'></td>" :"<td class='colorCells'>$count</td>"; 
-
-        if($count === 0) {
-            $countAlpha = 0;
-            foreach (range('A', 'Z') as $alpha){
-                if($countAlpha === $n){
-                    break;
-                }
-                $t .= "<td class='colorCells'>$alpha</td>";
-                $countAlpha++;
+        $countAlpha = 0;
+        foreach (range('A', 'Z') as $alpha){
+            if($countAlpha === $n){
+                break;
             }
-        } else {
-            $countBlank = 0;
-            while($countBlank < $n) {
-                $t .= "<td class='colorCells'></td>";
-                $countBlank++;
-            }
+            $cellText = ($count === 0) ? $alpha : '';
+            $t .= "<td id='$alpha$count' class='colorCells'>$cellText</td>";
+            $countAlpha++;
         }
         $count++;
     } 
