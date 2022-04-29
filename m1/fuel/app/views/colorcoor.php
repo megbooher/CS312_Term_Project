@@ -6,7 +6,7 @@ function createTable1($n){
     while($count < $n) {
         $t .= '<tr>';
         $t .= '<td width="30%">';
-        $t .= "<input type='radio' id='radio' name='radio'></input>";
+        $t .= ($count === 0) ? "<input type='radio' id='radio' name='radio' checked='checked'></input>" : "<input type='radio' id='radio' name='radio'></input>";
         $t .= "<select>";   
         for($i = 0; $i < 10; $i++) {
             if($i === $count) {
