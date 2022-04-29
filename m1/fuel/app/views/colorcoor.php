@@ -62,7 +62,6 @@ if(array_key_exists('button1', $_POST)) {
 }
 
 function button1() {
-    echo "This is Button1 that is selected";
     echo Asset::css('printView.css');
 }
 
