@@ -1,5 +1,5 @@
 <head>
-    <?php echo Asset::css('index.css'); ?>
+    <?php echo Asset::css('index.css', array('id' => 'cssfile')); ?>
 
     <meta charset="utf-16">
     <meta name="author" content="CS312 milestone1">
@@ -7,21 +7,12 @@
     <meta name="keywords" content="Homepage, HTML5, CS312, CSU">
 </head>
 
-<?php if(isset($header)) echo $header;?>
+<?php echo $header;?>
 
 
 
 <body>
-    <?php if(isset($title))
-    {
-        ?>
-
-    <h1><?php echo $title;?></h1>
-
-    <?php
-        }
-?>
-
+    <h2 id='title'><?php echo $title;?></h2>
     <div id='contentContainer'>
         <?php echo $content;?>
     </div>

@@ -53,12 +53,17 @@ nav li a {
   color: #3a3a3a;
   height: fit-content;
 }
-
+.cells,
 .colorCells {
   width: 30px;
   height: 30px;
 }
-
+.selected {
+  background-color: var(--color);
+}
+.errorMessage {
+  color: red;
+}
 table,
 th,
 td {
