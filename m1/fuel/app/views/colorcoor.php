@@ -102,6 +102,7 @@ function createTable2($n){
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
+    let selectedArr = [];
     $(document).ready(function() {
         let previous;
         $("select").on("focus click", function() {
@@ -126,9 +127,15 @@ function createTable2($n){
             const selected = classes.includes('selected');
             if (selected) {
                 $(`#${id}`).removeClass('selected');
+                const index = selectedArr.indexOf(id);
+                if (index > -1) {
+                    selectedArr.splice(index, 1);
+
+                }
             } else {
                 $(`#${id}`).addClass('selected');
                 $(`#${id}`).get(0).style.setProperty("--color", "red");
+                selectedArr.push(id);
             }
         });
 
