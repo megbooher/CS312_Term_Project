@@ -37,14 +37,13 @@ function createTable2($n){
     $count = 0;
     while($count < $n+1) {
         $t .= '<tr>';
-        $t .= ($count === 0) ? "<td class='colorCells'></td>" : "<td class='colorCells'>$count</td>";
+        $t .= ($count === 0) ? "<td class='colorCells'></td>" : "<td class='cells'>$count</td>";
         $countAlpha = 0;
         foreach (range('A', 'Z') as $alpha){
             if($countAlpha === $n){
                 break;
             }
-            $cellText = ($count === 0) ? $alpha : '';
-            $t .= "<td id='$alpha$count' class='colorCells'>$cellText</td>";
+            $t .=  ($count === 0) ? "<td id='$alpha$count' class='cells'>$alpha</td>":"<td id='$alpha$count' class='colorCells'></td>" ;
             $countAlpha++;
         }
         $count++;
