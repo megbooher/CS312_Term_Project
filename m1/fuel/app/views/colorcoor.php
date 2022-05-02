@@ -7,7 +7,7 @@ function createTable1($n){
     while($count < $n) {
         $t .= '<tr>';
         $t .= '<td width="30%">';
-        $t .= ($count === 0) ? "<input type='radio' id='radio-$count' name='radio' checked='checked'></input>" : "<input type='radio' id='radio' name='radio-$count'></input>";
+        $t .= ($count === 0) ? "<input type='radio' id='radio-$count' name='radio' checked='checked'></input>" : "<input type='radio' id='radio-$count' name='radio'></input>";
         $t .= "<select id='select-$count'>";   
         for($i = 0; $i < 10; $i++) {
                 if($i === $count) {
@@ -81,7 +81,8 @@ function createTable2($n){
         <?php if(empty($colorError) && $colors && $rows)
     {
         ?>
-        <a href="#" onclick="document.getElementById('cssfile').href='<?=Uri::create('assets/css/printView.css')?>';">Print</a>
+        <a href="#"
+            onclick="document.getElementById('cssfile').href='<?=Uri::create('assets/css/printView.css')?>';">Print</a>
         <?php
         }
 ?>
@@ -119,6 +120,18 @@ function createTable2($n){
                 window.colorsUsed[replacementIndex] = chosenSelection;
             }
         });
+        $('.colorCells').click(function(event) {
+            const id = $(this).attr("id");
+            const classes = $(`#${id}`).attr("class").split(" ");
+            const selected = classes.includes('selected');
+            if (selected) {
+                $(`#${id}`).removeClass('selected');
+            } else {
+                $(`#${id}`).addClass('selected');
+                $(`#${id}`).get(0).style.setProperty("--color", "red");
+            }
+        });
+
     });
     </script>
 </div>

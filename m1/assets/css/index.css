@@ -58,6 +58,9 @@ nav li a {
   width: 30px;
   height: 30px;
 }
+.selected {
+  background-color: var(--color);
+}
 .errorMessage {
   color: red;
 }
