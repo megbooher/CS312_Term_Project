@@ -7,14 +7,13 @@ function createTable1($n){
     while($count < $n) {
         $t .= '<tr>';
         $t .= '<td width="30%">';
-        $t .= ($count === 0) ? "<input type='radio' id='radio-$count' name='radio' checked='checked'></input>" : "<input type='radio' id='radio-$count' name='radio'></input>";
+        $t .= ($count === 0) ? "<input type='radio' id='radio-$count' name='radio' checked='checked' value=$colorsArr[$count]></input>" : "<input value=$colorsArr[$count] type='radio' id='radio-$count' name='radio'></input>";
         $t .= "<select id='select-$count'>";   
         for($i = 0; $i < 10; $i++) {
                 if($i === $count) {
                     $t .= "<option id='option-$i' value='$colorsArr[$i]' selected>$colorsArr[$i]</option>"; 
                     $c = $colorsArr[$i];
                     echo "<script>window.colorsUsed.push('$c');</script>";
-
                 }
                 else {
                     $t .= "<option id='option-$i' value='$colorsArr[$i]'>$colorsArr[$i]</option>"; 
@@ -75,8 +74,6 @@ function createTable2($n){
 
     <div style='color:red; text-align: center;'>
         <br>
-
-
         <?php if(empty($colorError) && $colors && $rows)
     {
         ?>
@@ -90,14 +87,11 @@ function createTable2($n){
         <br>
 
     </div>
-
     <?php if (empty($colorError) && $colors) {echo createTable1($colors);} ?>
     <br>
     <p id='errorMessage' class='errorMessage'></p>
     <?php if (empty($colorError) && $rows) {echo createTable2($rows);} ?>
     <br>
-
-
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
@@ -118,6 +112,14 @@ function createTable2($n){
             } else {
                 const replacementIndex = window.colorsUsed.indexOf(previous);
                 window.colorsUsed[replacementIndex] = chosenSelection;
+                const [s, i] = id.split('-');
+                $(`#radio-${i}`).val(chosenSelection);
+                if (`radio-${i}` === $("input[type='radio'][name='radio']:checked").attr('id')) {
+                    $(`.colorCells.selected`).get().map((a, i) => {
+                        $(`.colorCells.selected`).get(i).style.setProperty("--color",
+                            chosenSelection);
+                    })
+                }
             }
         });
         $('.colorCells').click(function(event) {
@@ -129,13 +131,20 @@ function createTable2($n){
                 const index = selectedArr.indexOf(id);
                 if (index > -1) {
                     selectedArr.splice(index, 1);
-
                 }
             } else {
                 $(`#${id}`).addClass('selected');
-                $(`#${id}`).get(0).style.setProperty("--color", "red");
+                const selectedColor = $("input[type='radio'][name='radio']:checked").val();
+                $(`#${id}`).get(0).style.setProperty("--color", selectedColor);
                 selectedArr.push(id);
             }
+        });
+
+        $('input[type=radio][name=radio]').change(function() {
+            const selectedColor = $("input[type='radio'][name='radio']:checked").val();
+            $(`.colorCells.selected`).get().map((a, i) => {
+                $(`.colorCells.selected`).get(i).style.setProperty("--color", selectedColor);
+            })
         });
 
     });
