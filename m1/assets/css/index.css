@@ -58,7 +58,9 @@ nav li a {
   width: 30px;
   height: 30px;
 }
-
+.errorMessage {
+  color: red;
+}
 table,
 th,
 td {

@@ -1,5 +1,6 @@
 <?php
 function createTable1($n){
+    echo "<script>var colorsUsed = []; console.log('createTable1');</script>";
     $t = '<table width="80%" cellpadding=5';
     $count = 0;
     $colorsArr = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Teal", "Grey", "Brown", "Black");
@@ -9,12 +10,16 @@ function createTable1($n){
         $t .= ($count === 0) ? "<input type='radio' id='radio-$count' name='radio' checked='checked'></input>" : "<input type='radio' id='radio' name='radio-$count'></input>";
         $t .= "<select id='select-$count'>";   
         for($i = 0; $i < 10; $i++) {
-            if($i === $count) {
-                $t .= "<option id='option-$i' value='$colorsArr[$i]' selected>$colorsArr[$i]</option>"; 
-            }
-            else {
-                $t .= "<option id='option-$i' value='$colorsArr[$i]'>$colorsArr[$i]</option>"; 
-            }
+                if($i === $count) {
+                    $t .= "<option id='option-$i' value='$colorsArr[$i]' selected>$colorsArr[$i]</option>"; 
+                    $c = $colorsArr[$i];
+                    echo "<script>window.colorsUsed.push('$c');</script>";
+
+                }
+                else {
+                    $t .= "<option id='option-$i' value='$colorsArr[$i]'>$colorsArr[$i]</option>"; 
+                }
+                
         }
         $t .= "</select>";
         
@@ -24,6 +29,7 @@ function createTable1($n){
         $count++;
     }   
     $t .= '</table>';
+    
     return $t;
 }
 function createTable2($n){
@@ -31,7 +37,7 @@ function createTable2($n){
     $count = 0;
     while($count < $n+1) {
         $t .= '<tr>';
-        $t .= ($count === 0) ? "<td class='colorCells'></td>" :"<td class='colorCells'>$count</td>"; 
+        $t .= ($count === 0) ? "<td class='colorCells'></td>" : "<td class='colorCells'>$count</td>";
         $countAlpha = 0;
         foreach (range('A', 'Z') as $alpha){
             if($countAlpha === $n){
@@ -46,22 +52,9 @@ function createTable2($n){
     $t .= '</tr>';
     $t .= '</table>';
     return $t;
-
-}
-
-if(array_key_exists('button1', $_POST)) {
-    button1();
-}
-
-function button1() {
-    echo Asset::css('printView.css');
 }
 
 ?>
-
-<script>
-
-</script>
 
 <div>
     <form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
@@ -88,15 +81,10 @@ function button1() {
         <?php if(empty($colorError) && $colors && $rows)
     {
         ?>
-
-        <form method="post">
-            <input type="submit" name="button1" class="button" value="Print" />
-        </form>
+        <a href="#" onclick="document.getElementById('cssfile').href='<?=Uri::create('assets/css/printView.css')?>';">Print</a>
         <?php
         }
 ?>
-
-
         <?php if($colorError) { echo "$colorError <br>";} ?>
         <?php if($rowError) { echo $rowError;} ?>
         <br>
@@ -105,8 +93,32 @@ function button1() {
 
     <?php if (empty($colorError) && $colors) {echo createTable1($colors);} ?>
     <br>
+    <p id='errorMessage' class='errorMessage'></p>
     <?php if (empty($colorError) && $rows) {echo createTable2($rows);} ?>
     <br>
 
 
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        let previous;
+        $("select").on("focus click", function() {
+            previous = this.value;
+            document.getElementById("errorMessage").innerHTML = '';
+        }).change(function(event) {
+            const id = $(this).attr("id");
+            const chosenSelection = $(this).val();
+            const index = window.colorsUsed.indexOf(chosenSelection);
+            if (index > -1) {
+                document.getElementById("errorMessage").innerHTML =
+                    'No two drop downs can select the same color at the same time';
+                $(`#${id}`).val(previous);
+            } else {
+                const replacementIndex = window.colorsUsed.indexOf(previous);
+                window.colorsUsed[replacementIndex] = chosenSelection;
+            }
+        });
+    });
+    </script>
 </div>
