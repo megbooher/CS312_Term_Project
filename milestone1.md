@@ -53,9 +53,9 @@
         - [x] 8.  brown
         - [x] 9.  black
         - [x] 10. teal
-      - [ ] No two drop-downs can select the same color at the same time. If this happens:
-        - [ ] revert the most recently changed drop-down to the previous value selected
-        - [ ] inform the user in a non-intrusive way (ie not an `alert()`)
+      - [x] No two drop-downs can select the same color at the same time. If this happens:
+        - [x] revert the most recently changed drop-down to the previous value selected
+        - [x] inform the user in a non-intrusive way (ie not an `alert()`)
 - [x] Table 2 (lower table):
   - [ x (`n` + 1) by (`n` + 1) (`n` = row/column param)
     - **This table should always be square**
@@ -71,10 +71,10 @@
 ### Pressing the print button
 
 - [x] Takes the user to a "printable view" of the resulting tables.
-- [ ] Keep the same table dimensions and easily print on one page (8.5" x 11") in portrait mode.
-  - [ ] Render in greyscale
-  - [ ] Header: greyscale logo and company name
-  - [ ] drop downs --> selected color names as plain text
+- [x] Keep the same table dimensions and easily print on one page (8.5" x 11") in portrait mode.
+  - [x] Render in greyscale
+  - [x] Header: greyscale logo and company name
+  - [x] drop downs --> selected color names as plain text
 
 **Note: This page will not use the common view layout as the rest of the site.**
 
