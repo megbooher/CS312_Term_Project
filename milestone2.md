@@ -9,7 +9,6 @@
 
 ## Print View
 - [ ] Update the print view to support the new color coordinate generation. 
-  - [ ]  Show colors
   - [X]  When the form is submitted, the print view behaves as before.  
   - [X]  Additionally, the radio buttons are NOT shown.  
   - [X]  The lower table's cells remain blank (white) and are not colored.
