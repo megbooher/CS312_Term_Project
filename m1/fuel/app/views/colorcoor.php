@@ -134,7 +134,8 @@ function createTable2($n){
                 rows = ['row-0', 'row-1', 'row-2','row-3', 'row-4', 'row-5', 'row-6', 'row-7', 'row-8', 'row-9'];
                 for(var i = 0, j = rows.length; i < j; i++) {
                     if(classes.includes(rows[i])) {
-                        document.getElementById(rows[i]).innerHTML = document.getElementById(rows[i]).innerHTML.replace(`${id} `, '');                        break;
+                        document.getElementById(rows[i]).innerHTML = document.getElementById(rows[i]).innerHTML.replace(`${id} `, '');
+                        break;
                     }
                 }
                 
@@ -150,7 +151,9 @@ function createTable2($n){
 
                 $(`#${id}`).get(0).style.setProperty("--color", selectedColor);
                 selectedArr.push(id);
-                document.getElementById(origRow).innerHTML += `${id} `;
+                const temp = document.getElementById(origRow).innerHTML += ` ${id}`;
+                console.log(temp.split(' '));
+                document.getElementById(origRow).innerHTML = temp.split(' ').sort().join(' ');
             }
         });
 
