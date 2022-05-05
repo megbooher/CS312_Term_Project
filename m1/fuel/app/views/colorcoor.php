@@ -23,7 +23,7 @@ function createTable1($n){
         $t .= "</select>";
         
         $t .= '</td>';
-        $t .= '<td></td>';
+        $t .= "<td id ='row-$count'></td>";
         $t .= '</tr>';
         $count++;
     }   
@@ -34,6 +34,7 @@ function createTable1($n){
 function createTable2($n){
     $t = '<table cellpadding=2';
     $count = 0;
+
     while($count < $n+1) {
         $t .= '<tr>';
         $t .= ($count === 0) ? "<td class='colorCells'></td>" : "<td class='cells'>$count</td>";
@@ -129,22 +130,32 @@ function createTable2($n){
             if (selected) {
                 $(`#${id}`).removeClass('selected');
                 const index = selectedArr.indexOf(id);
+
+                rows = ['row-0', 'row-1', 'row-2','row-3', 'row-4', 'row-5', 'row-6', 'row-7', 'row-8', 'row-9'];
+                for(var i = 0, j = rows.length; i < j; i++) {
+                    if(classes.includes(rows[i])) {
+                        document.getElementById(rows[i]).innerHTML = document.getElementById(rows[i]).innerHTML.replace(`${id} `, '');                        break;
+                    }
+                }
+                
+
                 if (index > -1) {
                     selectedArr.splice(index, 1);
                 }
             } else {
                 $(`#${id}`).addClass('selected');
                 const selectedColor = $("input[type='radio'][name='radio']:checked").val();
+                const origRow = 'row-' + $("input[type='radio'][name='radio']:checked").attr("id").substring(6)
+                $(`#${id}`).addClass(origRow);
+
                 $(`#${id}`).get(0).style.setProperty("--color", selectedColor);
                 selectedArr.push(id);
+                document.getElementById(origRow).innerHTML += `${id} `;
             }
         });
 
         $('input[type=radio][name=radio]').change(function() {
             const selectedColor = $("input[type='radio'][name='radio']:checked").val();
-            $(`.colorCells.selected`).get().map((a, i) => {
-                $(`.colorCells.selected`).get(i).style.setProperty("--color", selectedColor);
-            })
         });
 
     });
