@@ -82,5 +82,29 @@ class Controller_Milestone extends Controller_Template
         $this->template->content->print = true;
 
     }
-
+	
+	public function manage_color()
+	{
+		
+		$colName = null;
+		$hexVal = null;
+		$colNameEr = null;
+		$hexValEr = null;
+		
+		if (isset($_POST["colorName"])) {
+            $colName = (string) $POST["colorName"];
+            
+        }
+		
+		if (isset($_POST["hexVal"])) {
+            $hexVal = (string) $POST["hexVal"];
+            if (preg_match('/^#[a-f0-9]{6}$/i', $hexVal)) {
+                echo "Valid hex value!";
+            }
+			else {
+				echo "Invalid hex value!";
+			}
+        }
+		
+	}
 }
