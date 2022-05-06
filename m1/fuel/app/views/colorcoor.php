@@ -1,6 +1,6 @@
 <?php
 function createTable1($n){
-    echo "<script>var colorsUsed = []; console.log('createTable1');</script>";
+    echo "<script>var colorsUsed = [];</script>";
     $t = '<table width="80%" cellpadding=5';
     $count = 0;
     $colorsArr = array("Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Teal", "Grey", "Brown", "Black");
@@ -32,7 +32,7 @@ function createTable1($n){
     return $t;
 }
 function createTable2($n){
-    $t = '<table cellpadding=2';
+    $t = "<table id='coordTable' cellpadding=2";
     $count = 0;
 
     while($count < $n+1) {
@@ -58,38 +58,36 @@ function createTable2($n){
 
 <div>
 
-	<div id = 'row'>
-    <form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
-        method="get" action="<?php $controller ?>">
-        <h3>Color Coordinate Generation</h3>
-        <label for="n_rows_cols" id=' row'>Num Rows & Columns:</label>
-        <input type="text" name="n_rows_cols" id="n_rows_cols">
-        <br>
-        <br>
-        <label for="n_colors" id='color'>Num Colors:</label>
-        <input type="text" name="n_colors" id="n_colors">
-        <br>
-        <br>
-        <input style='padding: auto' type="submit" id="submit">
-        <br>
-    </form>
-		
-	<form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
-        method="post" action="<?php $controller ?>">
-        <h3>Manage Colors</h3>
-        <label for="colorName" id=' name'>Color Name:</label>
-        <input type="text" name="colorName" id="colorName">
-        <br>
-        <br>
-        <label for="hexVal" id='hex'>Hex Value:</label>
-        <input type="text" name="hexVal" id="hexVal">
-        <br>
-        <br>
-        <input style='padding: auto' type="submit" id="enter">
-        <br>
-    </form>
-	</div>
-	
+    <div id='row'>
+        <form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
+            method="get" action="<?php $controller ?>">
+            <h3>Color Coordinate Generation</h3>
+            <label for="n_rows_cols" id=' row'>Num Rows & Columns:</label>
+            <input type="text" name="n_rows_cols" id="n_rows_cols">
+            <br>
+            <br>
+            <label for="n_colors" id='color'>Num Colors:</label>
+            <input type="text" name="n_colors" id="n_colors">
+            <br>
+            <br>
+            <input style='padding: auto' type="submit" id="submit">
+        </form>
+
+        <form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
+            method="post" action="<?php $controller ?>">
+            <h3>Manage Colors</h3>
+            <label for="colorName" id=' name'>Color Name:</label>
+            <input type="text" name="colorName" id="colorName">
+            <br>
+            <br>
+            <label for="hexVal" id='hex'>Hex Value:</label>
+            <input type="text" name="hexVal" id="hexVal">
+            <br>
+            <br>
+            <input style='padding: auto' type="submit" id="enter">
+        </form>
+    </div>
+
     <div style='color:red; text-align: center;'>
         <br>
         <?php if(empty($colorError) && $colors && $rows)
@@ -148,14 +146,30 @@ function createTable2($n){
                 $(`#${id}`).removeClass('selected');
                 const index = selectedArr.indexOf(id);
 
-                rows = ['row-0', 'row-1', 'row-2','row-3', 'row-4', 'row-5', 'row-6', 'row-7', 'row-8', 'row-9'];
-                for(var i = 0, j = rows.length; i < j; i++) {
-                    if(classes.includes(rows[i])) {
-                        document.getElementById(rows[i]).innerHTML = document.getElementById(rows[i]).innerHTML.replace(`${id} `, '');
+                let prevRow = '';
+                rows = ['row-0', 'row-1', 'row-2', 'row-3', 'row-4', 'row-5', 'row-6', 'row-7', 'row-8',
+                    'row-9'
+                ];
+                for (var i = 0, j = rows.length; i < j; i++) {
+                    if (classes.includes(rows[i])) {
+                        document.getElementById(rows[i]).innerHTML = document.getElementById(rows[i])
+                            .innerHTML.replace(` ${id}`, '');
+                        prevRow = rows[i].substring(rows[i].length - 1);
                         break;
                     }
                 }
-                
+                const newRowId = 'row-' + $("input[type='radio'][name='radio']:checked").attr("id")
+                    .substring(6)
+                if (prevRow !== $("input[type='radio'][name='radio']:checked").attr("id")
+                    .substring(6)) {
+                    $(`#${id}`).addClass('selected');
+                    const selectedColor = $("input[type='radio'][name='radio']:checked").val();
+                    $(`#${id}`).get(0).style.setProperty("--color", selectedColor);
+                    const temp = document.getElementById(newRowId).innerHTML += ` ${id}`;
+                    document.getElementById(newRowId).innerHTML = temp.split(' ').sort().join(' ');
+                }
+
+
 
                 if (index > -1) {
                     selectedArr.splice(index, 1);
@@ -163,13 +177,13 @@ function createTable2($n){
             } else {
                 $(`#${id}`).addClass('selected');
                 const selectedColor = $("input[type='radio'][name='radio']:checked").val();
-                const origRow = 'row-' + $("input[type='radio'][name='radio']:checked").attr("id").substring(6)
+                const origRow = 'row-' + $("input[type='radio'][name='radio']:checked").attr("id")
+                    .substring(6)
                 $(`#${id}`).addClass(origRow);
 
                 $(`#${id}`).get(0).style.setProperty("--color", selectedColor);
                 selectedArr.push(id);
                 const temp = document.getElementById(origRow).innerHTML += ` ${id}`;
-                console.log(temp.split(' '));
                 document.getElementById(origRow).innerHTML = temp.split(' ').sort().join(' ');
             }
         });
@@ -180,4 +194,3 @@ function createTable2($n){
 
     });
     </script>
-
