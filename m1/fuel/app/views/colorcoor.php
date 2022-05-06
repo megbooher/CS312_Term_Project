@@ -55,7 +55,10 @@ function createTable2($n){
 
 ?>
 
+
 <div>
+
+	<div id = 'row'>
     <form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
         method="get" action="<?php $controller ?>">
         <h3>Color Coordinate Generation</h3>
@@ -70,9 +73,23 @@ function createTable2($n){
         <input style='padding: auto' type="submit" id="submit">
         <br>
     </form>
-
-
-
+		
+	<form style='margin: auto; text-align:center; width: 400px; border: 2px  solid gray; border-radius: 10px;'
+        method="post" action="<?php $controller ?>">
+        <h3>Manage Colors</h3>
+        <label for="colorName" id=' name'>Color Name:</label>
+        <input type="text" name="colorName" id="colorName">
+        <br>
+        <br>
+        <label for="hexVal" id='hex'>Hex Value:</label>
+        <input type="text" name="hexVal" id="hexVal">
+        <br>
+        <br>
+        <input style='padding: auto' type="submit" id="enter">
+        <br>
+    </form>
+	</div>
+	
     <div style='color:red; text-align: center;'>
         <br>
         <?php if(empty($colorError) && $colors && $rows)
@@ -163,4 +180,4 @@ function createTable2($n){
 
     });
     </script>
-</div>
+
