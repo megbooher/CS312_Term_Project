@@ -1,6 +1,6 @@
 <header>
     <div id='smallLogo'>
-        <?php echo Asset::img('SmallLogo.png', array('style' => 'width: 150', 'alt' => 'smallLogo'));?>
+        <?php echo Asset::img('SmallLogo.png', array('style' => 'width: 100', 'alt' => 'smallLogo'));?>
         <h1 id='title'>Cat Midwife Finder</h1>
     </div>
     <nav>
